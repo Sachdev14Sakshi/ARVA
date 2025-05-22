@@ -13,6 +13,15 @@ Experience ARVA without local setup via our live demo:
 2. Select the date or date range
 3. Enter a natural language query or choose to generate a report
 
+**Example Queries:**
+- "all goat cases"
+- "cases at MG ROAD"
+- "all cases"
+- "taken to Blue Paw Clinic"
+- "how much spent on pet taxi"
+- "What was the outcome of the parrot?"
+- "cow case in south delhi"
+
 ## Overview
 ARVA is an interactive assistant designed to support volunteers at animal welfare organizations. It allows volunteers to:
 
@@ -69,7 +78,7 @@ Although structured metadata (e.g., dates, animal type, clinic names) could be f
 
 ```bash
 # Clone the repository
-git clone https://github.com/Sachdev14Sakshi/ARVA.git
+git clone https://github.com/your-org/arva.git
 cd arva
 
 # Create and activate a virtual environment
