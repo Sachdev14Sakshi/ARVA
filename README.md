@@ -78,7 +78,7 @@ Although structured metadata (e.g., dates, animal type, clinic names) could be f
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/arva.git
+git clone https://github.com/Sachdev14Sakshi/ARVA.git
 cd arva
 
 # Create and activate a virtual environment
