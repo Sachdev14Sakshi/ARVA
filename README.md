@@ -1,4 +1,17 @@
-# ARVA: Animal Rescue Volunteer Assistant
+# ARVA: Animal Welfare Volunteer Assistant
+
+**Note: This repository currently implements Phase 1 functionality. Future phases (CRUD, reporting, access control) will be added in upcoming releases.**
+
+## Hosted Demo on Hugging Face Spaces
+
+Experience ARVA without local setup via our live demo:
+
+[animal-rescue-api · Hugging Face Spaces](https://huggingface.co/spaces/Sakshi14Sachdev/animal-rescue-api)
+
+**Steps to use the demo:**
+1. Add your OpenAI API Key
+2. Select the date or date range
+3. Enter a natural language query or choose to generate a report
 
 ## Overview
 ARVA is an interactive assistant designed to support volunteers at animal welfare organizations. It allows volunteers to:
@@ -12,9 +25,7 @@ This phase leverages a Retrieval-Augmented Generation (RAG) architecture: the sy
 
 Although structured metadata (e.g., dates, animal type, clinic names) could be filtered via a traditional relational database, we use a vector database to enable **semantic search** across free-text case summaries and expense notes. This ensures volunteers can find relevant information even if their query wording doesn’t exactly match stored fields.
 
-In Phase 1, we've implemented the core search functionality using a vector database and an LLM:
-
-### Phase 1: Implementation Steps
+## Phase 1: Implementation Steps
 
 1. **Loading and Splitting the Data**
    - **Technique**: `RecursiveCharacterTextSplitter`
@@ -31,18 +42,6 @@ In Phase 1, we've implemented the core search functionality using a vector datab
 4. **Setting Up the Retriever**
    - **Technique**: **Hybrid Retriever** (Semantic + Metadata Filter)
    - **Purpose**: Combines metadata filters (animal type, date range, etc.) with semantic similarity search over case summaries, ensuring precise, contextually relevant results even when volunteer queries vary in wording.
-
-
-1. **Data Preparation**
-   - Split case documents into manageable chunks.
-   - Generate embeddings for each chunk and store them with metadata (date, case ID, animal type, etc.) in a vector database.
-
-2. **Interactive Search**
-   - Volunteers select a date range and enter a natural language query (e.g., “taken to Blue Paw Clinic”).
-   - The system encodes the query and applies a metadata filter based on the date range and other structured fields.
-   - Relevant document chunks are retrieved from the vector DB via semantic similarity.
-   - The retrieved chunks and the original query are sent to the LLM.
-   - The LLM’s response, along with the source documents, is returned to the volunteer.
 
 ## Next Phases
 
@@ -101,6 +100,14 @@ python main.py
 - Open the web UI at `http://localhost:8000`.
 - Use the date picker to select a range and enter your query in the search bar.
 
+## Contributing
 
+Contributions are welcome! Please open issues and pull requests in the GitHub repository.
 
+## License
 
+This project is licensed under the MIT License. See `LICENSE` for details.
+
+## Contact
+
+For questions or support, please contact the maintainers at support@arva.org.
